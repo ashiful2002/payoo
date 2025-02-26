@@ -1,0 +1,6 @@
+.cursor-pointer .border-none .ring-2 .ring-blue-600 {}
+
+.focused {
+    border: 1px solid blue;
+    background-color: aqua;
+}
