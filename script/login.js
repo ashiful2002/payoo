@@ -12,7 +12,7 @@ logonBtn.addEventListener("click", function (event) {
     console.log("okay thik ache");
     if (convertedPin === 1234) {
       console.log("correct pin");
-      window.location.href = "/main.html";
+      window.location.href = "./main.html";
     } else {
       alert("wrong pin");
     }
