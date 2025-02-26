@@ -9,6 +9,10 @@
     <!-- daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -22,7 +26,9 @@
                     <h1 class="text-3xl font-bold">$ <span id="main-balance">4500</span></h1>
                     <p class="border rounded px-1">Availavle Balance</p>
                 </div>
-                <button class="btn" id="log-out-btn">log out</button>
+                <button class="btn " id="log-out-btn">log out <i
+                        class="fa-solid fa-right-to-bracket mt-1 text-xl"></i></button>
+
             </nav>
 
             <!--  box section -->
@@ -40,8 +46,8 @@
                         <img src="assets/send1.png" class="w-8 mx-auto" alt="">
                         <h3>Cash Out</h3>
                     </div>
-                    <!-- single box -->
-                    <div class="box border p-4 text-center rounded-sm">
+                    <!-- transfer-box -->
+                    <div id="transfer-box" class="box border p-4 text-center rounded-sm">
                         <img src="assets/money1.png" class="w-8 mx-auto" alt="">
                         <h3>Transfer Money</h3>
                     </div>
@@ -55,15 +61,91 @@
                         <img src="assets/transaction1.png" class="w-8 mx-auto" alt="">
                         <h3>Transaction</h3>
                     </div>
-                    <!-- single box -->
-                    <div class="box border p-4 text-center rounded-sm">
+                    <!-- get Bonus box -->
+                    <div class="box border p-4 text-center rounded-sm" id="get-bonus-box">
                         <img src="assets/bonus1.png" class="w-8 mx-auto" alt="">
                         <h3>Get Bonus</h3>
                     </div>
                 </div>
             </section>
+            <!-- latest payment section -->
+            <section class="mt-6" id="latest-payment">
+                <div class="flex items-center justify-between ">
+                    <h2 class="text-2xl font-semibold ">Latest payment</h2>
+                    <p class="text-neutral-700">View All</p>
+                </div>
+                <!-- all payment section -->
+                <div class="hero-contentt mt-5">
+                    <!-- Ellectric Payment  -->
+                    <div class=" flex items-center mb-4 justify-between p-2 bg-white rounded-md shadow">
+                        <div class="flex items-center ">
+                            <div class="ml-2">
+                                <img class="w-10 bg-neutral-200 rounded-full p-2" src="./assets/wallet1.png"
+                                    alt="wallet">
+                            </div>
+                            <div class="ml-5">
+                                <h3 class="font-semibold text-neutral-700">Ellectric Bill</h3>
+                                <p class="text-[12px] text-neutral-600">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            ***
+                        </div>
+                    </div>
+                    <!-- Bank Payment  -->
+                    <div class=" flex items-center mb-4 justify-between p-2 bg-white rounded-md shadow">
+                        <div class="flex items-center ">
+                            <div class="ml-2">
+                                <img class="w-10 bg-neutral-200 rounded-full p-2" src="./assets/wallet1.png"
+                                    alt="wallet">
+                            </div>
+                            <div class="ml-5">
+                                <h3 class="font-semibold text-neutral-700">Bank Deposit</h3>
+                                <p class="text-[12px] text-neutral-600">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            ***
+                        </div>
+                    </div>
+                    <!-- Mobile Recharge  -->
+                    <div class=" flex items-center mb-4 justify-between p-2 bg-white rounded-md shadow">
+                        <div class="flex items-center ">
+                            <div class="ml-2">
+                                <img class="w-10 bg-neutral-200 rounded-full p-2" src="./assets/wallet1.png"
+                                    alt="wallet">
+                            </div>
+                            <div class="ml-5">
+                                <h3 class="font-semibold text-neutral-700">Mobile Recharge</h3>
+                                <p class="text-[12px] text-neutral-600">Today 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            ***
+                        </div>
+                    </div>
+                    <!-- Gass Bill  -->
+                    <div class=" flex items-center mb-4 justify-between p-2 bg-white rounded-md shadow">
+                        <div class="flex items-center ">
+                            <div class="ml-2">
+                                <img class="w-10 bg-neutral-200 rounded-full p-2" src="./assets/wallet1.png"
+                                    alt="wallet">
+                            </div>
+                            <div class="ml-5">
+                                <h3 class="font-semibold text-neutral-700">Gas Bill</h3>
+                                <p class="text-[12px] text-neutral-600">Yesterday 10:04 AM</p>
+                            </div>
+                        </div>
+                        <div>
+                            ***
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
             <!-- add money section -->
-            <section id="add-money" class="">
+            <section id="add-money" class="hidden">
                 <h2 class="text-2xl text-center text-blue-600 font-bold ">Add Money</h2>
                 <div class="">
                     <div class="hero-content flex-col lg:flex-row-reverse">
@@ -71,20 +153,23 @@
                             <div class="card-body">
                                 <legend>Select Bank</legend>
                                 <select id="all-banks" required class="select">
-                                    <option disabled value="nothing selected">Select MFS</option>
-                                    <option value="bkash">Bkash</option>
-                                    <option value="rocket">Rocket</option>
-                                    <option value="nagad">Nagad</option>
+                                    <option value="nothing selected">Select Bank</option>
+                                    <option value="sonali_bank">Sonali Bank</option>
+                                    <option value="ucb_bank">UCB Bank</option>
+                                    <option value="islami_bank">Islami Bank</option>
+                                    <option value="dutch_bangla_bank">Dutch Bangla Bank</option>
+                                    <option value="national_bank">National Bank</option>
                                 </select>
                                 <fieldset class="fieldset">
                                     <!-- account number -->
                                     <label class="fieldset-label font-medium text-black text-[16px] ">
-                                        Agent Number</label>
+                                        Bank Account Number</label>
                                     <input type="number" id="account" value="01973854323"
                                         class="input border-none bg-[#F4F5F7] rounded-full "
                                         placeholder="Enter 11 digit number" required />
                                     <!-- amount -->
-                                    <label class="fieldset-label font-medium text-black text-[16px] ">Amount</label>
+                                    <label class="fieldset-label font-medium text-black text-[16px] ">Amount to
+                                        Add</label>
                                     <input type="number" id="amount" value=""
                                         class="input border-none bg-[#F4F5F7] rounded-full " placeholder="Enter Amount"
                                         required />
@@ -98,7 +183,7 @@
                                     <!-- <button
                                         class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
                                         id="login-btn">Login</button> -->
-                                    <button class="btn btn-neutral bg-blue-600 border-none  mt-4 "
+                                    <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
                                         id="add-money-btn">ADD
                                         MONEY</button>
                                 </fieldset>
@@ -135,17 +220,83 @@
                                 <!-- <button
                                     class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
                                     id="login-btn">Login</button> -->
-                                <button class="btn btn-neutral bg-blue-600 border-none  mt-4 " id="cash-out-btn">Cash
+                                <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
+                                    id="cash-out-btn">Cash
                                     out</button>
                             </fieldset>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- Transfer section section -->
+            <section id="transfer-section" class="hidden">
+                <h2 class="text-2xl font-bold">Transfer Money</h2>
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <div class="card-body">
+                            <fieldset class="fieldset">
+                                <!-- User acc.  number -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">
+                                    User Account Number</label>
+                                <input type="number" id="user-account-number" value="01973854323"
+                                    class="input border-none bg-[#F4F5F7] rounded-full "
+                                    placeholder="Enter 11 digit number" required />
+                                <!-- amount -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">Amount</label>
+                                <input type="number" id="transfer-amount" value=""
+                                    class="input border-none bg-[#F4F5F7] rounded-full " placeholder="Enter Amount"
+                                    required />
+                                <!-- pin number -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">
+                                    Pin Number</label>
+                                <input type="number/text" id="transfer-pin"
+                                    class="input border-none bg-[#F4F5F7] rounded-full "
+                                    placeholder="Enter 4 Digit pin Number" required />
+                                <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+                                <!-- <button
+                                    class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
+                                    id="login-btn">Login</button> -->
+                                <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
+                                    id="cash-out-btn">
+                                    Transfer Money</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
             <section id="transaction">
                 <h2 class="text-2xl text-center py-4 text-blue-600 font-bold hidden">Transaction History</h2>
                 <div id="transection-container">
+                    <div>
+                        <p>No transection yet</p>
+                    </div>
+                </div>
+            </section>
+            <!-- get bonus section -->
+            <section class="hidden" id="get-bonus">
+                <h2 class="text-2xl  font-bold capitalize">get bonus</h2>
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <div class="card-body">
+                            <fieldset class="fieldset">
 
+                                <!-- get Bonus -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">
+                                    Enter Bonus Coupon</label>
+                                <input type="number/text" id="cash-out-pin"
+                                    class="input border-none bg-[#F4F5F7] rounded-full "
+                                    placeholder="Enter 4 Digit pin Number" required />
+
+                                <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
+                                    id="cash-out-btn">
+                                    Get Bonus </button>
+                            </fieldset>
+                        </div>
+                    </div>
                 </div>
             </section>
         </header>
@@ -159,6 +310,7 @@
     <script src="script/cashOut.js"></script>
     <script src="script/transection.js"></script>
     <script src="script/toggle.js"></script>
+    <script src="script/getBonus.js"></script>
 
 
 </body>

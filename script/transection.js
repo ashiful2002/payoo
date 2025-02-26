@@ -4,6 +4,7 @@ document
     // hide cashout and add money section
     handleToggle("add-money", "none");
     handleToggle("cash-out", "none");
+    handleToggle("get-bonus", "none");
     handleToggle("transaction", "block");
 
     // const initialvalue = "no transection history";
