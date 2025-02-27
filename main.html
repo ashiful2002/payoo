@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="./payoo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>payoo MFS - fastest transection</title>
+    <title>Payoo MFS - fastest transection</title>
     <!-- daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -33,7 +33,7 @@
 
             <!--  box section -->
             <section id="" class="mt-10">
-                <div id="welcome-payoo" class="border rounded-md p-2">
+                <div id="welcome-payoo" class="">
                     <h1 class="font-bold text-2xl mb-2">Welcome to payoo!</h1>
                     <p class="">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
@@ -188,10 +188,7 @@
                                     <input type="number/text" id="pin"
                                         class="input border-none bg-[#F4F5F7] rounded-full "
                                         placeholder="Enter 4 Digit pin Number" required />
-                                    <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
-                                    <!-- <button
-                                        class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
-                                        id="login-btn">Login</button> -->
+
                                     <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
                                         id="add-money-btn">ADD
                                         MONEY</button>
@@ -225,10 +222,6 @@
                                 <input type="number/text" id="cash-out-pin"
                                     class="input border-none bg-[#F4F5F7] rounded-full "
                                     placeholder="Enter 4 Digit pin Number" required />
-                                <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
-                                <!-- <button
-                                    class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
-                                    id="login-btn">Login</button> -->
                                 <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
                                     id="cash-out-btn">Cash
                                     out</button>
@@ -261,10 +254,6 @@
                                 <input type="number/text" id="transfer-pin"
                                     class="input border-none bg-[#F4F5F7] rounded-full "
                                     placeholder="Enter 4 Digit pin Number" required />
-                                <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
-                                <!-- <button
-                                    class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
-                                    id="login-btn">Login</button> -->
                                 <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
                                     id="cash-out-btn">
                                     Transfer Money</button>
@@ -297,10 +286,6 @@
                                 <input type="number/text" id="transfer-pin"
                                     class="input border-none bg-[#F4F5F7] rounded-full "
                                     placeholder="Enter 4 Digit pin Number" required />
-                                <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
-                                <!-- <button
-                                    class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
-                                    id="login-btn">Login</button> -->
                                 <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
                                     id="cash-out-btn">
                                     Transfer Money</button>
@@ -309,15 +294,25 @@
                     </div>
                 </div>
             </section>
-
-
-
-
-            <section id="transaction">
-                <h2 class="text-2xl text-center py-4 text-blue-600 font-bold hidden">Transaction History</h2>
+            <!-- Transaction section -->
+            <section id="transaction" class="">
+                <h2 class="text-2xl py-4 font-bold ">Transaction History</h2>
                 <div id="transection-container">
                     <div>
-                        <p>No transection yet</p>
+                        <!-- <div class=" flex items-center mb-4 justify-between p-2 bg-white rounded-md shadow">
+                            <div class="flex items-center ">
+                                <div class="ml-2">
+                                    
+                                </div>
+
+                                <div class="ml-5" id="initial-transaction">
+                                    <h3 class="font-semibold text-neutral-700">No Transaction Yet</h3>
+                                </div>
+                            </div>
+                            <div>
+                                ***
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
@@ -355,8 +350,6 @@
     <script src="script/cashOut.js"></script>
     <script src="script/transection.js"></script>
     <script src="script/toggle.js"></script>
-    <script src="script/getBonus.js"></script>
-
 
 </body>
 

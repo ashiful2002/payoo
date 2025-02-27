@@ -1,4 +1,1 @@
 
-
-//   handleToggle("get-bonus", "none");
-

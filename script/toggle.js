@@ -1,23 +1,14 @@
 //  add money toggle
 document.getElementById("add-money-box").addEventListener("click", function () {
-  document.getElementById("add-money").style.display = "block";
-  document.getElementById("cash-out").style.display = "none";
+  handleToggle("add-money", "block");
+  handleToggle("cash-out", "none");
   handleToggle("get-bonus", "none");
   handleToggle("latest-payment", "none");
   handleToggle("transfer-section", "none");
   handleToggle("pay-bill", "none");
-  // this.classList.remove("clicked1-box")
-  // this.classList.add("clicked1-box")
+  handleToggle("transaction", "none");
 
-  // color change with reuseable Funcction
-
-  // changeBoxstyleWithClassList("add-money-box","clicked-box")
-  // changeBoxstyleWithClassList("cash-out-box","remove-style")
-  // changeBoxstyleWithClassList("transaction-box","remove-style")
-  // changeBoxstyleWithClassList("pay-bill-box","remove-style")
-  // changeBoxstyleWithClassList("get-bonus-box","remove-style")
-
-  
+  // color change with reuseable function
   changeBoxstyle("cash-out-box", "");
   changeBoxstyle("transaction-box", "");
   changeBoxstyle("transfer-box", "");
@@ -28,25 +19,15 @@ document.getElementById("add-money-box").addEventListener("click", function () {
 });
 //  cash out toggle
 document.getElementById("cash-out-box").addEventListener("click", function () {
-  document.getElementById("add-money").style.display = "none";
-  document.getElementById("cash-out").style.display = "block";
-  handleToggle("get-bonus", "none");
+  handleToggle("cash-out", "block");
+  handleToggle("add-money", "none");
   handleToggle("transfer-section", "none");
   handleToggle("pay-bill", "none");
-  // this.classList.remove("clicked1-box")
-  // this.classList.add("clicked2-box")
+  handleToggle("transaction", "none");
+  handleToggle("get-bonus", "none");
+  handleToggle("latest-payment", "none");
 
-  // color change with reuseable Funcction
-
-  
-  // changeBoxstyleWithClassList("add-money-box","remove-style")
-  // changeBoxstyleWithClassList("cash-out-box","clicked-box")
-  // changeBoxstyleWithClassList("transaction-box","remove-style")
-  // changeBoxstyleWithClassList("transfer-box","remove-style")
-  // changeBoxstyleWithClassList("pay-bill-box","remove-style")
-  // changeBoxstyleWithClassList("get-bonus-box","remove-style")
-
-  
+  // color change with reuseable function
   changeBoxstyle("add-money-box", "");
   changeBoxstyle("transaction-box", "");
   changeBoxstyle("transfer-box", "");
@@ -59,12 +40,13 @@ document.getElementById("cash-out-box").addEventListener("click", function () {
 document
   .getElementById("transaction-box")
   .addEventListener("click", function () {
-    // hide cashout and add money section
+    handleToggle("transaction", "block");
     handleToggle("add-money", "none");
     handleToggle("cash-out", "none");
-    handleToggle("get-bonus", "none");
-    handleToggle("transaction", "block");
     handleToggle("transfer-section", "none");
+    handleToggle("pay-bill", "none");
+    handleToggle("latest-payment", "none");
+    handleToggle("get-bonus", "none");
 
     // color change with reuseable Funcction
 
@@ -74,13 +56,9 @@ document
     changeBoxstyle("pay-bill-box", "");
     changeBoxstyle("get-bonus-box", "");
     changeBoxstyle("cash-out-box", "");
-
-    // const initialvalue = "no transection history";
-    // const transactionContainer = document.getElementById(
-    //   "transection-container"
-    // );
-    // transactionContainer.innerText = initialvalue;
   });
+
+// transfer section
 document.getElementById("transfer-box").addEventListener("click", function () {
   // hide cashout and add money section
 
@@ -88,6 +66,7 @@ document.getElementById("transfer-box").addEventListener("click", function () {
   handleToggle("add-money", "none");
   handleToggle("cash-out", "none");
   handleToggle("get-bonus", "none");
+  handleToggle("pay-bill", "none");
   handleToggle("transaction", "none");
   handleToggle("transfer-section", "block");
 
@@ -99,20 +78,18 @@ document.getElementById("transfer-box").addEventListener("click", function () {
   changeBoxstyle("pay-bill-box", "");
   changeBoxstyle("get-bonus-box", "");
   changeBoxstyle("cash-out-box", "");
-  
-
-
 });
 
 //  get bonus togle
 
 document.getElementById("get-bonus-box").addEventListener("click", function () {
-  this.style.cursor = "pointer";
-  this.classList.add = "border";
 
   handleToggle("add-money", "none");
   handleToggle("cash-out", "none");
   handleToggle("transaction", "none");
+  handleToggle("latest-payment", "none");
+  handleToggle("transfer-section", "none");
+
   handleToggle("pay-bill", "none");
   handleToggle("get-bonus", "block");
 
@@ -127,13 +104,15 @@ document.getElementById("get-bonus-box").addEventListener("click", function () {
 });
 //  pay bill toggle
 document.getElementById("pay-bill-box").addEventListener("click", function () {
-  document.getElementById("pay-bill").style.display = "block";
-  document.getElementById("cash-out").style.display = "none";
-  handleToggle("get-bonus", "none");
+  // document.getElementById("pay-bill").style.display = "block";
+  // document.getElementById("cash-out").style.display = "none";
+  handleToggle("add-money", "none");
+  handleToggle("cash-out", "none");
+  handleToggle("transaction", "none");
   handleToggle("latest-payment", "none");
   handleToggle("transfer-section", "none");
-  // this.classList.remove("clicked1-box")
-  // this.classList.add("clicked1-box")
+  handleToggle("get-bonus", "none");
+  handleToggle("pay-bill", "block");
 
   // color change with reuseable Funcction
 
@@ -152,5 +131,3 @@ document.getElementById("log-out-btn").addEventListener("click", function () {
     window.location.href = "./index.html";
   }
 });
-
-
