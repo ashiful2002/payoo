@@ -18,3 +18,12 @@ const setInnerTextByIdAndValue = (id, value) => {
 function handleToggle(id, status) {
   document.getElementById(id).style.display = status;
 }
+
+const changeBoxstyle = (id,colorCode) => {
+  document.getElementById(id).style.border = colorCode
+  // document.getElementById(id).classList.add(colorCode)
+};
+
+const changeBoxstyleWithClassList = (id,classes) =>{
+  document.getElementById(id).classList.add(classes)
+}

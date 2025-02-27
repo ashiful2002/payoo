@@ -24,7 +24,7 @@
                 <img src="assets/Group.png" class="w-16" alt="logo">
                 <div>
                     <h1 class="text-3xl font-bold">$ <span id="main-balance">4500</span></h1>
-                    <p class="border rounded px-1">Availavle Balance</p>
+                    <p id="availavle-balance" class="border rounded px-1">Availavle Balance</p>
                 </div>
                 <button class="btn " id="log-out-btn">log out <i
                         class="fa-solid fa-right-to-bracket mt-1 text-xl"></i></button>
@@ -33,38 +33,47 @@
 
             <!--  box section -->
             <section id="" class="mt-10">
-                <h1 class="font-bold text-2xl mb-2">Welcome to payoo!</h1>
-                <p class="">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
-                <div class="cards grid grid-cols-3 mt-14 gap-2 p-2 ">
+                <div id="welcome-payoo" class="border rounded-md p-2">
+                    <h1 class="font-bold text-2xl mb-2">Welcome to payoo!</h1>
+                    <p class="">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+
+                </div>
+                <div class="cards grid grid-cols-3 mt-14 gap-3 p-2 ">
                     <!-- add-money box -->
-                    <div id="add-money-box" class="box p-4 text-center rounded-sm border cursor-pointer ">
+                    <div id="add-money-box"
+                        class="box p-4 flex flex-col items-center justify-center text-center rounded-xl border border-neutral-400 drop-shadow-md cursor-pointer ">
                         <img src="assets/wallet1.png" class="w-8 mx-auto" alt="">
-                        <h3>Add Money</h3>
+                        <h3 class="text-neutral-700 tracking-tighter text-[14px]">Add Money</h3>
                     </div>
                     <!-- cash-out box -->
-                    <div id="cash-out-box" class="box border p-4 text-center rounded-sm cursor-pointer">
+                    <div id="cash-out-box"
+                        class="box p-4 flex flex-col items-center justify-center text-center rounded-xl border border-neutral-400 drop-shadow-md cursor-pointer">
                         <img src="assets/send1.png" class="w-8 mx-auto" alt="">
-                        <h3>Cash Out</h3>
+                        <h3 class="text-neutral-700 tracking-tighter text-[14px]">Cash Out</h3>
                     </div>
                     <!-- transfer-box -->
-                    <div id="transfer-box" class="box border p-4 text-center rounded-sm">
+                    <div id="transfer-box"
+                        class="box p-4 flex flex-col items-center justify-center text-center rounded-xl border border-neutral-400 drop-shadow-md cursor-pointer">
                         <img src="assets/money1.png" class="w-8 mx-auto" alt="">
-                        <h3>Transfer Money</h3>
+                        <h3 class="text-neutral-700 tracking-tighter text-[14px]">Transfer Money</h3>
                     </div>
-                    <!-- single box -->
-                    <div class="box border p-4 text-center rounded-sm">
+                    <!-- pay-bill-box -->
+                    <div id="pay-bill-box"
+                        class="box p-4 flex flex-col items-center justify-center text-center rounded-xl border border-neutral-400 drop-shadow-md cursor-pointer">
                         <img src="assets/purse1.png" class="w-8 mx-auto" alt="">
-                        <h3>Pay Bill</h3>
+                        <h3 class="text-neutral-700 tracking-tighter text-[14px]">Pay Bill</h3>
                     </div>
                     <!-- transeaction box -->
-                    <div id="transaction-box" class="box border p-4 text-center rounded-sm">
+                    <div id="transaction-box"
+                        class="box p-4 flex flex-col items-center justify-center text-center rounded-xl border border-neutral-400 drop-shadow-md cursor-pointer">
                         <img src="assets/transaction1.png" class="w-8 mx-auto" alt="">
-                        <h3>Transaction</h3>
+                        <h3 class="text-neutral-700 tracking-tighter text-[14px]">Transaction</h3>
                     </div>
                     <!-- get Bonus box -->
-                    <div class="box border p-4 text-center rounded-sm" id="get-bonus-box">
+                    <div id="get-bonus-box"
+                        class="box p-4 flex flex-col items-center justify-center text-center rounded-xl border border-neutral-400 drop-shadow-md cursor-pointer">
                         <img src="assets/bonus1.png" class="w-8 mx-auto" alt="">
-                        <h3>Get Bonus</h3>
+                        <h3 class="text-neutral-700 tracking-tighter text-[14px]">Get Bonus</h3>
                     </div>
                 </div>
             </section>
@@ -231,6 +240,42 @@
             <!-- Transfer section section -->
             <section id="transfer-section" class="hidden">
                 <h2 class="text-2xl font-bold">Transfer Money</h2>
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <div class="card-body">
+                            <fieldset class="fieldset">
+                                <!-- User acc.  number -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">
+                                    User Account Number</label>
+                                <input type="number" id="user-account-number" value="01973854323"
+                                    class="input border-none bg-[#F4F5F7] rounded-full "
+                                    placeholder="Enter 11 digit number" required />
+                                <!-- amount -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">Amount</label>
+                                <input type="number" id="transfer-amount" value=""
+                                    class="input border-none bg-[#F4F5F7] rounded-full " placeholder="Enter Amount"
+                                    required />
+                                <!-- pin number -->
+                                <label class="fieldset-label font-medium text-black text-[16px] ">
+                                    Pin Number</label>
+                                <input type="number/text" id="transfer-pin"
+                                    class="input border-none bg-[#F4F5F7] rounded-full "
+                                    placeholder="Enter 4 Digit pin Number" required />
+                                <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+                                <!-- <button
+                                    class="btn btn-neutral mt-4 rounded-full bg-blue-600 border-none shadow-none "
+                                    id="login-btn">Login</button> -->
+                                <button class="btn btn-neutral bg-blue-600 border-none rounded-full mt-4 "
+                                    id="cash-out-btn">
+                                    Transfer Money</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- pay bill section -->
+            <section id="pay-bill" class="hidden">
+                <h2 class="text-2xl font-bold">Pay bill section is initialises</h2>
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
                         <div class="card-body">

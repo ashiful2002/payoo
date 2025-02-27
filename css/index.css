@@ -1,6 +1,16 @@
-.cursor-pointer .border-none .ring-2 .ring-blue-600 {}
+/* .cursor-pointer .border-none .ring-2 .ring-blue-600 {} */
 
-.focused {
-    border: 1px solid blue;
-    background-color: aqua;
+.clicked-box {
+    border: 2px solid rgba(0, 0, 255, 0.294);
+    color: rgba(0, 0, 255, 0.294);
+
+}
+
+.clicked-box h3 {
+    color: rgba(0, 0, 255, 0.631);
+    font-weight: 500;
+
+}
+
+.remove-style{
 }
