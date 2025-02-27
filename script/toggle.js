@@ -84,6 +84,7 @@ document.getElementById("transfer-box").addEventListener("click", function () {
 
 document.getElementById("get-bonus-box").addEventListener("click", function () {
 
+
   handleToggle("add-money", "none");
   handleToggle("cash-out", "none");
   handleToggle("transaction", "none");
